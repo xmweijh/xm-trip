@@ -27,3 +27,31 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Project Tree
+```
+xm-trip
+├─ .gitignore
+├─ index.html
+├─ jsconfig.json
+├─ LICENSE
+├─ package-lock.json
+├─ package.json
+├─ public
+│  └─ favicon.ico
+├─ README.md
+├─ src
+│  ├─ App.vue
+│  ├─ assets            # img/css/font/video/audioi
+│  ├─ components        # 抽取组件
+│  ├─ hooks             # 复用逻辑代码
+│  ├─ main.js       
+│  ├─ mock              # 模拟数据
+│  ├─ router            # 路由
+│  ├─ service           # 网络请求
+│  ├─ store             # 状态管理
+│  ├─ utils             # 抽取工具函数
+│  └─ views             # 页面
+└─ vite.config.js
+
+```
