@@ -4,7 +4,7 @@ import { BASE_URL, TIMEOUT } from './config'
 
 // const mainStore = useMainStore()
 
-class HYRequest {
+class xmRequest {
   constructor(baseURL, timeout=10000) {
     this.instance = axios.create({
       baseURL,
@@ -48,6 +48,6 @@ class HYRequest {
   }
 }
 
-export default new HYRequest(BASE_URL, TIMEOUT)
+export default new xmRequest(BASE_URL, TIMEOUT)
 
 

@@ -15,7 +15,6 @@
 <style scoped lang="scss">
  .nav-bar {
       display:flex;
-      position: fixed;
       justify-content: center;
       align-items: center;
       height: 46px;

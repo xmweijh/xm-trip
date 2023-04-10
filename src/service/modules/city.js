@@ -1,7 +1,7 @@
-import hyRequest from '../request'
+import xmRequest from '../request'
 
 export function getCityAll() {
-  return hyRequest.get({
+  return xmRequest.get({
     url: "/city/all"
   })
 }
