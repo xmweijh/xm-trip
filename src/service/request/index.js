@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { BASE_URL, TIMEOUT } from './config'
-// import useMainStore from '@/store/modules/main'
+import useMainStore from '@/store/modules/main'
 
-// const mainStore = useMainStore()
+const mainStore = useMainStore()
 
 class xmRequest {
   constructor(baseURL, timeout=10000) {
@@ -11,19 +11,19 @@ class xmRequest {
       timeout
     })
 
-    // this.instance.interceptors.request.use(config => {
-    //   mainStore.isLoading = true
-    //   return config
-    // }, err => {
-    //   return err
-    // })
-    // this.instance.interceptors.response.use(res => {
-    //   mainStore.isLoading = false
-    //   return res
-    // }, err => {
-    //   mainStore.isLoading = false
-    //   return err
-    // })
+    this.instance.interceptors.request.use(config => {
+      mainStore.isLoading = true
+      return config
+    }, err => {
+      return err
+    })
+    this.instance.interceptors.response.use(res => {
+      mainStore.isLoading = false
+      return res
+    }, err => {
+      mainStore.isLoading = false
+      return err
+    })
   }
 
   request(config) {
