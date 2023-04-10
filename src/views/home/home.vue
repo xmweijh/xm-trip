@@ -33,7 +33,7 @@ watch(isReachBottom, (newValue) => {
 
 // 搜索框显示的控制
 const isShowSearchBar = computed(() => {
-  return scrollTop.value >= 360
+  return scrollTop.value >= 420
 });
 </script>
 
@@ -46,7 +46,7 @@ const isShowSearchBar = computed(() => {
     <HomeSearch></HomeSearch>
     <HomeCategories></HomeCategories>
     <div class="search-bar" v-if="isShowSearchBar">
-      <search-bar :start-date="'09.19'" :end-date="'09.20'" />
+      <search-bar />
     </div>
     <HomeContent></HomeContent>
   </div>
@@ -66,5 +66,16 @@ const isShowSearchBar = computed(() => {
     width: 100%;
     overflow: hidden;
   }
+}
+
+.search-bar {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+  padding: 16px 16px 10px;
+  background-color: #fff;
 }
 </style>
