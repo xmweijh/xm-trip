@@ -9,6 +9,7 @@ import { ref, computed } from "vue"
 import { useRouter, useRoute } from 'vue-router';
 import { getDetailInfos } from '@/service'
 import DetailSwipe from './components/detail-swipe.vue'
+import DetailInfos from './components/detail-infos.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -32,7 +33,8 @@ const onClickLeft = () => {
         <van-nav-bar title="房屋详情" left-text="客栈" left-arrow @click-left="onClickLeft" />
     </div>
     <div class="main" v-if="mainPart">
-        <detail-swipe :swipe-data="mainPart.topModule.housePicture.housePics"/>    
+        <detail-swipe :swipe-data="mainPart.topModule.housePicture.housePics"/>
+        <detail-infos name="描述" :top-infos="mainPart.topModule"/>  
     </div>
 </template>
 
