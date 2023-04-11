@@ -12,6 +12,7 @@ import DetailSwipe from './components/detail-swipe.vue'
 import DetailInfos from './components/detail-infos.vue'
 import DetailFacility from './components/detail-facility.vue'
 import DetailLandlord from './components/detail-landlord.vue'
+import DetailComment from './components/detail-comment.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -39,6 +40,7 @@ const onClickLeft = () => {
         <detail-infos name="描述" :top-infos="mainPart.topModule"/>  
         <detail-facility name="设施" :house-facility="mainPart.dynamicModule.facilityModule.houseFacility"/>
         <detail-landlord name="房东" :landlord="mainPart.dynamicModule.landlordModule"/>
+        <detail-comment name="评论" :comment="mainPart.dynamicModule.commentModule"/>
     </div>
 </template>
 
