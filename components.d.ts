@@ -9,6 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    DetailSection: typeof import('./src/components/detail-section/detail-section.vue')['default']
     HouseItemV3: typeof import('./src/components/house-item-v3/house-item-v3.vue')['default']
     HouseItemV9: typeof import('./src/components/house-item-v9/house-item-v9.vue')['default']
     Loading: typeof import('./src/components/loading/loading.vue')['default']

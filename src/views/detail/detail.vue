@@ -10,6 +10,8 @@ import { useRouter, useRoute } from 'vue-router';
 import { getDetailInfos } from '@/service'
 import DetailSwipe from './components/detail-swipe.vue'
 import DetailInfos from './components/detail-infos.vue'
+import DetailFacility from './components/detail-facility.vue'
+import DetailLandlord from './components/detail-landlord.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -35,6 +37,8 @@ const onClickLeft = () => {
     <div class="main" v-if="mainPart">
         <detail-swipe :swipe-data="mainPart.topModule.housePicture.housePics"/>
         <detail-infos name="描述" :top-infos="mainPart.topModule"/>  
+        <detail-facility name="设施" :house-facility="mainPart.dynamicModule.facilityModule.houseFacility"/>
+        <detail-landlord name="房东" :landlord="mainPart.dynamicModule.landlordModule"/>
     </div>
 </template>
 
