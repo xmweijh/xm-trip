@@ -13,6 +13,7 @@ import DetailInfos from './components/detail-infos.vue'
 import DetailFacility from './components/detail-facility.vue'
 import DetailLandlord from './components/detail-landlord.vue'
 import DetailComment from './components/detail-comment.vue'
+import DetailNotice from './components/detail-notice.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -41,6 +42,7 @@ const onClickLeft = () => {
         <detail-facility name="设施" :house-facility="mainPart.dynamicModule.facilityModule.houseFacility"/>
         <detail-landlord name="房东" :landlord="mainPart.dynamicModule.landlordModule"/>
         <detail-comment name="评论" :comment="mainPart.dynamicModule.commentModule"/>
+        <detail-notice name="须知" :order-rules="mainPart.dynamicModule.rulesModule.orderRules"/>
     </div>
 </template>
 
