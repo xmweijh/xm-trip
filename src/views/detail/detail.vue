@@ -14,6 +14,7 @@ import DetailFacility from './components/detail-facility.vue'
 import DetailLandlord from './components/detail-landlord.vue'
 import DetailComment from './components/detail-comment.vue'
 import DetailNotice from './components/detail-notice.vue'
+import DetailMap from './components/detail-map.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -23,7 +24,7 @@ const houseId = route.params.id
 const detailInfos = ref({})
 const mainPart = computed(() => detailInfos.value.mainPart)
 getDetailInfos(houseId).then(res => {
-  detailInfos.value = res.data
+    detailInfos.value = res.data
 })
 
 // 监听返回按钮的点击
@@ -37,12 +38,14 @@ const onClickLeft = () => {
         <van-nav-bar title="房屋详情" left-text="客栈" left-arrow @click-left="onClickLeft" />
     </div>
     <div class="main" v-if="mainPart">
-        <detail-swipe :swipe-data="mainPart.topModule.housePicture.housePics"/>
-        <detail-infos name="描述" :top-infos="mainPart.topModule"/>  
-        <detail-facility name="设施" :house-facility="mainPart.dynamicModule.facilityModule.houseFacility"/>
-        <detail-landlord name="房东" :landlord="mainPart.dynamicModule.landlordModule"/>
-        <detail-comment name="评论" :comment="mainPart.dynamicModule.commentModule"/>
-        <detail-notice name="须知" :order-rules="mainPart.dynamicModule.rulesModule.orderRules"/>
+        <detail-swipe :swipe-data="mainPart.topModule.housePicture.housePics" />
+        <detail-infos name="描述" :top-infos="mainPart.topModule" />
+        <detail-facility name="设施" :house-facility="mainPart.dynamicModule.facilityModule.houseFacility" />
+        <detail-landlord name="房东" :landlord="mainPart.dynamicModule.landlordModule" />
+        <detail-comment name="评论" :comment="mainPart.dynamicModule.commentModule" />
+        <detail-notice name="须知" :order-rules="mainPart.dynamicModule.rulesModule.orderRules" />
+        <detail-map name="周边" :position="mainPart.dynamicModule.positionModule"/>
+
     </div>
 </template>
 
