@@ -15,6 +15,7 @@ import DetailLandlord from './components/detail-landlord.vue'
 import DetailComment from './components/detail-comment.vue'
 import DetailNotice from './components/detail-notice.vue'
 import DetailMap from './components/detail-map.vue'
+import DetailIntro from './components/detail-intro.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -45,6 +46,7 @@ const onClickLeft = () => {
         <detail-comment name="评论" :comment="mainPart.dynamicModule.commentModule" />
         <detail-notice name="须知" :order-rules="mainPart.dynamicModule.rulesModule.orderRules" />
         <detail-map name="周边" :position="mainPart.dynamicModule.positionModule"/>
+        <detail-intro :price-intro="mainPart.introductionModule"/>
 
     </div>
 </template>
