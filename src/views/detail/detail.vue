@@ -61,7 +61,7 @@ let currentDistance = -1
 const tabClick = (index) => {
     const key = Object.keys(sectionEls.value)[index]
     const el = sectionEls.value[key]
-    let distance = el.offsetTop > MaxScroll.value? MaxScroll.value : el.offsetTop
+    let distance = el.offsetTop > MaxScroll.value ? MaxScroll.value : el.offsetTop
     if (index !== 0) {
         distance = distance - 44
     }
@@ -75,8 +75,12 @@ const tabClick = (index) => {
     })
 }
 
-
 // 页面滚动, 滚动时匹配对应的tabControll的index
+// 1.获取所有的区域的offsetTops
+const values = computed(() => {
+    const els = Object.values(sectionEls.value)
+    return els.map(el => el.offsetTop)
+})
 const tabControlRef = ref()
 watch(scrollTop, (newValue) => {
     if (newValue === currentDistance) {
@@ -84,19 +88,15 @@ watch(scrollTop, (newValue) => {
     }
     if (isClick) return
 
-    // 1.获取所有的区域的offsetTops
-    const els = Object.values(sectionEls.value)
-    const values = els.map(el => el.offsetTop)
-
     // 2.根据newValue去匹配想要索引
-    let index = values.length - 1
-    for (let i = 0; i < values.length; i++) {
-        if ( newValue + 44 < values[i]) {
+    let index = values.value.length - 1
+    for (let i = 0; i < values.value.length; i++) {
+        if (newValue + 44 < values.value[i]) {
             index = i - 1
             break
         }
     }
-    if(index !== tabControlRef.value?.currentIndex)
+    if (index !== tabControlRef.value?.currentIndex)
         tabControlRef.value?.setCurrentIndex(index)
 });
 </script>
