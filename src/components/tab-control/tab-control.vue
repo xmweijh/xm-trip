@@ -24,7 +24,7 @@ function itemClick(index) {
 function setCurrentIndex(index) {
     currentIndex.value = index
 };
-defineExpose({setCurrentIndex});
+defineExpose({currentIndex, setCurrentIndex});
 </script>
 
 <template>

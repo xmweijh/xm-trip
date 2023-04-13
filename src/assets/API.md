@@ -108,7 +108,7 @@ GET
 
 ### 2.1. 房子详情
 
-http://codercba.com:1888/api/favor/list
+http://codercba.com:1888/api/detail/infos?houseId=
 
 Example Request
 
@@ -120,7 +120,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://codercba.com:1888/api/favor/list", requestOptions)
+fetch("http://codercba.com:1888/api/detail/infos?houseId=", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));

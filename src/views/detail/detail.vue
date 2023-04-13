@@ -91,12 +91,13 @@ watch(scrollTop, (newValue) => {
     // 2.根据newValue去匹配想要索引
     let index = values.length - 1
     for (let i = 0; i < values.length; i++) {
-        if (values[i] > newValue + 44) {
+        if ( newValue + 44 < values[i]) {
             index = i - 1
             break
         }
     }
-    tabControlRef.value?.setCurrentIndex(index)
+    if(index !== tabControlRef.value?.currentIndex)
+        tabControlRef.value?.setCurrentIndex(index)
 });
 </script>
 
