@@ -4,7 +4,10 @@
  * @since: 2023-03-02
  * home.vue
 -->
-<script setup>
+<!-- <script>
+  export default { name: "home" }
+</script> -->
+<script setup name="home">
 import { onActivated, ref, watch, computed } from 'vue'
 import useHomeStore from "@/store/modules/home"
 import HomeNavBar from "./components/home-nav-bar.vue"
@@ -34,6 +37,13 @@ watch(isReachBottom, (newValue) => {
 // 搜索框显示的控制
 const isShowSearchBar = computed(() => {
   return scrollTop.value >= 420
+});
+
+// 跳转回home时, 保留原来的位置
+onActivated(() => {
+  homeRef.value?.scrollTo({
+    top: scrollTop.value
+  })
 });
 </script>
 
