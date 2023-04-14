@@ -23,6 +23,7 @@
     "cz-git": "^1.5.0",
     "czg": "^1.5.0",
     "pinia": "^2.0.32",
+    "postcss-px-to-viewport": "^1.1.1",
     "sass": "^1.58.3",
     "scss": "^0.2.4",
     "unplugin-vue-components": "^0.24.0",
